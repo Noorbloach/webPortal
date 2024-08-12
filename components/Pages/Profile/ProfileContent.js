@@ -10,7 +10,7 @@ const ProfileContent = () => {
           <div className={styles.headerContent}>
             <h1>Welcome to admash Dashboard!</h1>
             <p>
-              You have done 68% 😎 more sales today. Check your new badge in
+              Wowww 😎 more sales today. Check your new badge in
               your profile.
             </p>
           </div>
