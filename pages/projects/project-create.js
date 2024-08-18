@@ -20,6 +20,17 @@ const RichTextEditor = dynamic(() => import('@mantine/rte'), {
 })
 
 const ProjectCreate = () => {
+  const [status, setStatus] = React.useState('');
+  const [clientType, setClientType] = React.useState('');
+
+  const handleStatusChange = (event) => {
+    setStatus(event.target.value);
+  };
+
+  const handleClientTypeChange = (event) => {
+    setClientType(event.target.value);
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -27,12 +38,6 @@ const ProjectCreate = () => {
       email: data.get("email"),
       password: data.get("password"),
     });
-  };
-
-  // Select Priority 
-  const [priority, setPriority] = React.useState('');
-  const handleChange = (event) => {
-    setPriority(event.target.value);
   };
 
   return (
@@ -68,8 +73,8 @@ const ProjectCreate = () => {
         </Typography>
 
         <Box component="form" noValidate onSubmit={handleSubmit}>
-          <Grid container alignItems="center" spacing={2}>
-            <Grid item xs={12} md={12} lg={12}>
+          <Grid container spacing={2}>
+            <Grid item xs={12} md={6}>
               <Typography
                 as="h5"
                 sx={{
@@ -94,7 +99,7 @@ const ProjectCreate = () => {
               />
             </Grid>
 
-            <Grid item xs={12} md={12} lg={6}>
+            <Grid item xs={12} md={6}>
               <Typography
                 as="h5"
                 sx={{
@@ -103,11 +108,39 @@ const ProjectCreate = () => {
                   mb: "12px",
                 }}
               >
-                Start Date
+                Status
+              </Typography>
+              
+              <FormControl fullWidth>
+                <InputLabel id="status-label">Status</InputLabel>
+                <Select
+                  labelId="status-label"
+                  id="status"
+                  value={status}
+                  label="Status"
+                  onChange={handleStatusChange}
+                >
+                  <MenuItem value={10}>ETA</MenuItem>
+                  <MenuItem value={20}>Approved</MenuItem>
+                  <MenuItem value={30}>Rejected</MenuItem>
+                </Select>
+              </FormControl>
+            </Grid>
+
+            <Grid item xs={12} md={6}>
+              <Typography
+                as="h5"
+                sx={{
+                  fontWeight: "500",
+                  fontSize: "14px",
+                  mb: "12px",
+                }}
+              >
+                Client Due Date
               </Typography>
               <TextField
                 autoComplete="start-date"
-                name="startDate"
+                name="Client Due Date"
                 required
                 fullWidth
                 id="startDate"
@@ -119,7 +152,7 @@ const ProjectCreate = () => {
               />
             </Grid>
 
-            <Grid item xs={12} md={12} lg={6}>
+            <Grid item xs={12} md={6}>
               <Typography
                 as="h5"
                 sx={{
@@ -128,14 +161,14 @@ const ProjectCreate = () => {
                   mb: "12px",
                 }}
               >
-                End Date
+                Op’s Due Date
               </Typography>
               <TextField
-                autoComplete="end-date"
-                name="endDate"
+                autoComplete="Op's-Due-Date"
+                name="Op's Due Date"
                 required
                 fullWidth
-                id="endDate"
+                id="op'sDueDate"
                 type="date"
                 autoFocus
                 InputProps={{
@@ -144,7 +177,7 @@ const ProjectCreate = () => {
               />
             </Grid>
 
-            <Grid item xs={12} md={12} lg={12}>
+            <Grid item xs={12}>
               <Typography
                 as="h5"
                 sx={{
@@ -159,7 +192,7 @@ const ProjectCreate = () => {
               <RichTextEditor
                 id="rte"
                 controls={[
-                  ['bold', 'italic', 'underline', 'link', 'image'],
+                  ['bold', 'italic', 'underline', 'link',],
                   ['unorderedList', 'h1', 'h2', 'h3', 'h4'],
                   ['sup', 'sub'],
                   ['alignLeft', 'alignCenter', 'alignRight'],
@@ -167,7 +200,7 @@ const ProjectCreate = () => {
               />
             </Grid>
 
-            <Grid item xs={12} md={12} lg={6}>
+            <Grid item xs={12} md={6}>
               <Typography
                 as="h5"
                 sx={{
@@ -192,7 +225,7 @@ const ProjectCreate = () => {
               />
             </Grid>
 
-            <Grid item xs={12} md={12} lg={6}>
+            <Grid item xs={12} md={6}>
               <Typography
                 as="h5"
                 sx={{
@@ -201,42 +234,14 @@ const ProjectCreate = () => {
                   mb: "12px",
                 }}
               >
-                Priority Status
-              </Typography>
-              
-              <FormControl fullWidth>
-                <InputLabel id="demo-simple-select-label">Priority</InputLabel>
-                <Select
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
-                  value={priority}
-                  label="Priority"
-                  onChange={handleChange}
-                >
-                  <MenuItem value={10}>High</MenuItem>
-                  <MenuItem value={20}>Medium</MenuItem>
-                  <MenuItem value={30}>Low</MenuItem>
-                </Select>
-              </FormControl>
-            </Grid>
-   
-            <Grid item xs={12} md={12} lg={6}>
-              <Typography
-                as="h5"
-                sx={{
-                  fontWeight: "500",
-                  fontSize: "14px",
-                  mb: "12px",
-                }}
-              >
-                Categories
+                Client Dropdown
               </Typography>
               
               {/* CategoriesSelect */}
               <CategoriesSelect />
             </Grid>
 
-            <Grid item xs={12} md={12} lg={6}>
+            <Grid item xs={12} md={6}>
               <Typography
                 as="h5"
                 sx={{
@@ -245,11 +250,93 @@ const ProjectCreate = () => {
                   mb: "12px",
                 }}
               >
-                Members
+                Client Type
               </Typography>
               
-              {/* MemberSelect */}
-              <MemberSelect />
+              <FormControl fullWidth>
+                <InputLabel id="client-type-label">Client Type</InputLabel>
+                <Select
+                  labelId="client-type-label"
+                  id="client-type"
+                  value={clientType}
+                  label="Client Type"
+                  onChange={handleClientTypeChange}
+                >
+                  <MenuItem value="existing">Existing</MenuItem>
+                  <MenuItem value="new">NEW</MenuItem>
+                </Select>
+              </FormControl>
+            </Grid>
+
+            <Grid item xs={12} md={6}>
+              <Typography
+                as="h5"
+                sx={{
+                  fontWeight: "500",
+                  fontSize: "14px",
+                  mb: "12px",
+                }}
+              >
+                CLIENT PERMANENT NOTES
+              </Typography>
+              <TextField
+                autoComplete="client-permanent-notes"
+                name="clientPermanentNotes"
+                fullWidth
+                id="clientPermanentNotes"
+                label="CLIENT PERMANENT NOTES"
+                multiline
+                rows={4}
+                InputProps={{
+                  style: { borderRadius: 8 },
+                }}
+              />
+            </Grid>
+
+            <Grid item xs={12} md={6}>
+              <Typography
+                as="h5"
+                sx={{
+                  fontWeight: "500",
+                  fontSize: "14px",
+                  mb: "12px",
+                }}
+              >
+                RFI/Addendum Upload
+              </Typography>
+              <TextField
+                autoComplete="rfi-addendum-upload"
+                name="rfiAddendumUpload"
+                fullWidth
+                id="rfiAddendumUpload"
+                label="RFI/Addendum Upload"
+                InputProps={{
+                  style: { borderRadius: 8 },
+                }}
+              />
+            </Grid>
+
+            <Grid item xs={12} md={6}>
+              <Typography
+                as="h5"
+                sx={{
+                  fontWeight: "500",
+                  fontSize: "14px",
+                  mb: "12px",
+                }}
+              >
+                Project Plans Upload
+              </Typography>
+              <TextField
+                autoComplete="project-plans-upload"
+                name="projectPlansUpload"
+                fullWidth
+                id="projectPlansUpload"
+                label="Project Plans Upload"
+                InputProps={{
+                  style: { borderRadius: 8 },
+                }}
+              />
             </Grid>
 
             <Grid item xs={12} textAlign="end">

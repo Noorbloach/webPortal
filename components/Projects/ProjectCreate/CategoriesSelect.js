@@ -20,12 +20,9 @@ const MenuProps = {
 };
 
 const names = [
-  "UI/UX Design",
-  "Frontend Development",
-  "Backend Development",
-  "React App",
-  "E-commerce",
-  "PSD To HTML",
+  "Perfect",
+  "Stellar",
+  "Geoglyphs",
 ];
 
 function getStyles(name, personName, theme) {
