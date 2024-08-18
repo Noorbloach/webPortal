@@ -1,11 +1,11 @@
-import React from 'react';
-import Grid from '@mui/material/Grid';
-import TotalUsers from '@/components/Projects/Task/TotalUsers';
-import CompletedTasks from '@/components/Projects/Task/CompletedTasks';
-import TasksPerformance from '@/components/Projects/Task/TasksPerformance';
-import MyTasks from '@/components/Projects/Task/MyTasks';
-import Link from 'next/link';
-import styles from '@/styles/PageTitle.module.css';
+import React from "react";
+import Grid from "@mui/material/Grid";
+import TotalUsers from "components/Projects/Task/TotalUsers";
+import CompletedTasks from "components/Projects/Task/CompletedTasks";
+import TasksPerformance from "components/Projects/Task/TasksPerformance";
+import MyTasks from "components/Projects/Task/MyTasks";
+import Link from "next/link";
+import styles from "@/styles/PageTitle.module.css";
 
 const Task = () => (
   <>

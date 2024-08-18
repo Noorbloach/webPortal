@@ -1,7 +1,7 @@
-import React from 'react';
-import NotificationTable from '@/components/Notification/NotificationTable';
-import Link from 'next/link';
-import styles from '@/styles/PageTitle.module.css';
+import React from "react";
+import NotificationTable from "components/Notification/NotificationTable";
+import Link from "next/link";
+import styles from "@/styles/PageTitle.module.css";
 
 export default function Notification() {
   return (

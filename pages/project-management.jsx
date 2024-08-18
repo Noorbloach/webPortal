@@ -1,17 +1,17 @@
-import React from 'react';
+import React from "react";
 import Grid from "@mui/material/Grid";
-import Link from 'next/link';
-import styles from '@/styles/PageTitle.module.css';
-import Features from '@/components/Dashboard/ProjectManagement/Features';
-import TaskDistribution from '@/components/Dashboard/ProjectManagement/TaskDistribution';
-import MyTasks from '@/components/Dashboard/ProjectManagement/MyTasks';
-import TotalUsers from '@/components/Dashboard/ProjectManagement/TotalUsers';
-import CompletedTasks from '@/components/Dashboard/ProjectManagement/CompletedTasks';
-import TasksPerformance from '@/components/Dashboard/ProjectManagement/TasksPerformance';
-import IssuesSummary from '@/components/Dashboard/ProjectManagement/IssuesSummary';
-import AllProjects from '@/components/Dashboard/ProjectManagement/AllProjects';
-import TeamMembers from '@/components/Dashboard/ProjectManagement/TeamMembers';
-import ActivityTimeline from '@/components/Dashboard/ProjectManagement/ActivityTimeline';
+import Link from "next/link";
+import styles from "@/styles/PageTitle.module.css";
+import Features from "src/components/Dashboard/ProjectManagement/Features";
+import TaskDistribution from "src/components/Dashboard/ProjectManagement/TaskDistribution";
+import MyTasks from "src/components/Dashboard/ProjectManagement/MyTasks";
+import TotalUsers from "src/components/Dashboard/ProjectManagement/TotalUsers";
+import CompletedTasks from "src/components/Dashboard/ProjectManagement/CompletedTasks";
+import TasksPerformance from "src/components/Dashboard/ProjectManagement/TasksPerformance";
+import IssuesSummary from "src/components/Dashboard/ProjectManagement/IssuesSummary";
+import AllProjects from "src/components/Dashboard/ProjectManagement/AllProjects";
+import TeamMembers from "src/components/Dashboard/ProjectManagement/TeamMembers";
+import ActivityTimeline from "src/components/Dashboard/ProjectManagement/ActivityTimeline";
 
 export default function ProjectManagement() {
   return (
@@ -23,9 +23,7 @@ export default function ProjectManagement() {
           <li>
             <Link href="/project-management/">Dashboard</Link>
           </li>
-          <li>
-            Project Management
-          </li>
+          <li>Project Management</li>
         </ul>
       </div>
 

@@ -1,7 +1,5 @@
-import ForgotPasswordForm from '@/components/Authentication/ForgotPasswordForm';
+import ForgotPasswordForm from "components/Authentication/ForgotPasswordForm";
 
-const SignIn = () => (
-  <ForgotPasswordForm />
-);
+const SignIn = () => <ForgotPasswordForm />;
 
 export default SignIn;

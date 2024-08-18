@@ -1,7 +1,5 @@
-import SignInForm from '@/components/Authentication/SignInForm';
+import SignInForm from "components/Authentication/SignInForm";
 
-const SignIn = () => (
-  <SignInForm />
-);
+const SignIn = () => <SignInForm />;
 
 export default SignIn;

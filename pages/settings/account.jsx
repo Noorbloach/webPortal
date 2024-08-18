@@ -1,5 +1,5 @@
-import Profile from "@/components/Settings/Account/Profile";
-import NavBar from "@/components/Settings/NavBar";
+import Profile from "components/Settings/Account/Profile";
+import NavBar from "components/Settings/NavBar";
 import Card from "@mui/material/Card";
 import { Typography } from "@mui/material";
 

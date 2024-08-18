@@ -2,18 +2,19 @@
 import React, { useState } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import LeftSidebar from "@/components/_App/LeftSidebar";
-import TopNavbar from "@/components/_App/TopNavbar";
-import Footer from "@/components/_App/Footer";
-import ScrollToTop from "./ScrollToTop.jsx";
-import ControlPanelModal from "@/components/_App/ControlPanelModal/index.jsx"; // Updated import
+import LeftSidebar from "./LeftSidebar/index.jsx"; // Correct relative path
+import TopNavbar from "./TopNavbar/index.jsx"; // Correct relative path
+import Footer from "./Footer.jsx"; // Correct relative path
+import ScrollToTop from "./ScrollToTop.jsx"; // Correct relative path
+import ControlPanelModal from "./ControlPanelModal/index.jsx"; // Correct relative path
+
 
 const Layout = ({ children }) => {
   const router = useRouter();
   const [active, setActive] = useState(false);
 
   const toggleActive = () => {
-    setActive(prevActive => !prevActive);
+    setActive((prevActive) => !prevActive);
   };
 
   const isAuthPath = [
@@ -22,7 +23,7 @@ const Layout = ({ children }) => {
     "/authentication/forgot-password",
     "/authentication/lock-screen",
     "/authentication/confirm-mail",
-    "/authentication/logout"
+    "/authentication/logout",
   ].includes(router.pathname);
 
   return (
@@ -45,10 +46,10 @@ const Layout = ({ children }) => {
           {!isAuthPath && <Footer />}
         </div>
       </div>
-      
+
       {/* ScrollToTop */}
       <ScrollToTop />
-      
+
       {!isAuthPath && <ControlPanelModal />}
     </>
   );

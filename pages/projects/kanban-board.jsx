@@ -1,10 +1,10 @@
 import React from "react";
 import Grid from "@mui/material/Grid";
-import NewProjects from "@/components/Projects/KanbanBoard/NewProjects";
-import ToDo from "@/components/Projects/KanbanBoard/ToDo";
-import InReview from "@/components/Projects/KanbanBoard/InReview";
-import Link from 'next/link';
-import styles from '@/styles/PageTitle.module.css';
+import NewProjects from "components/Projects/KanbanBoard/NewProjects";
+import ToDo from "components/Projects/KanbanBoard/ToDo";
+import InReview from "components/Projects/KanbanBoard/InReview";
+import Link from "next/link";
+import styles from "@/styles/PageTitle.module.css";
 
 const KanbanBoard = () => (
   <>
@@ -18,7 +18,7 @@ const KanbanBoard = () => (
         <li>Kanban Board</li>
       </ul>
     </div>
-    
+
     <Grid
       container
       rowSpacing={1}
